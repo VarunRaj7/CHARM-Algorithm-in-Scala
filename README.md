@@ -10,12 +10,13 @@ The following are the updates introduced to the SatishUC15 implementation:
     
     Also, see how bitvector implementation done: [Bitvector Implementation of CHARM properties](#bitvector-implementation-of-charm-properties)
     
-#### Main Source:
+#### Source:
 
 CHARM: An Efficient Algorithm for Closed Association Rule Mining, by Mohammed J. Zaki and Ching-Jui Hsiao, Computer Science Department, Rensselaer Polytechnic Institute, Troy NY 12180
 
 [CHARM algorithm](https://pdfs.semanticscholar.org/9f80/dbdd6e613d98dead0cc9e6c88fe04d70f330.pdf).
 
+[SatishUC15](https://github.com/SatishUC15/CHARM-Algorithm)
 
 ### Classes
 
