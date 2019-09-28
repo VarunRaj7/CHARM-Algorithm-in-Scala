@@ -9,7 +9,7 @@ The following are the updates introduced to the SatishUC15 implementation:
 2. A bitvector implementation is also provided so as to reduce the memory consumed. 
     Also, see how bitvector implementation done here: [Bitvector Implementation of CHARM properties](#Bitvector Implementation of CHARM properties)
     
-### Bitvector implementation of CHARM properties
+### Bitvector Implementation of CHARM properties
 
 
 
