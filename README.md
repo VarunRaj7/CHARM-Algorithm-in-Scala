@@ -117,7 +117,7 @@ This object has only one function apply, so as to provide the charm function as 
     
 ### Projects:
 
-This respository contains two maven projects titled fcv3 and fcv4 which are normal and bitvector implementations of CHARM in scala. It will also contain a test sample scala code on how to import and use the charm module with the classes discussed above.
+This respository contains two maven projects titled fcv3 and fcv4 which are normal and bitvector implementations of CHARM in scala. It will also contain a test sample scala code on how to import and use the charm module with the classes discussed above. This file is provided with the title : **"fc_test.scala"**.
 
 Example file is already stored in the data folder as testInp_v2.txt. The first few lines are show below:
 
