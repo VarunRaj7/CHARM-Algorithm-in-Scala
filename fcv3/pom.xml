@@ -22,22 +22,22 @@
       <scope>test</scope>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-core -->
-	<dependency>
+	<!--<dependency>
 	    <groupId>org.apache.spark</groupId>
 	    <artifactId>spark-core_2.11</artifactId>
 	    <version>2.3.2</version>
-	</dependency>
+	</dependency>-->
 	<!-- https://mvnrepository.com/artifact/org.apache.spark/spark-sql -->
-	<dependency>
+	<!--<dependency>
 	    <groupId>org.apache.spark</groupId>
 	    <artifactId>spark-sql_2.11</artifactId>
 	    <version>2.3.2</version>
-	</dependency>
+	</dependency>-->
 	<!-- https://mvnrepository.com/artifact/org.scalanlp/breeze -->
-	<dependency>
+	<!--<dependency>
 	    <groupId>org.scalanlp</groupId>
 	    <artifactId>breeze_2.11</artifactId>
 	    <version>0.12</version>
-	</dependency>
+	</dependency>-->
   </dependencies>
 </project>
