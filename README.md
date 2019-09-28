@@ -14,7 +14,7 @@ The following are the updates introduced to the SatishUC15 implementation:
 
 The ItemSet,  class structure is shown as below:
 
-ItemSet
+**_ItemSet_**
 
 |----isets: immutable.TreeSet[String]
 
@@ -53,12 +53,12 @@ ItemSet
              returns True                                                                                                          
 
 
-case class ItemsMapTrans
+**_Case class ItemsMapTrans_**
 
 |----imt: immutable.TreeMap[ItemSet, mutable.TreeSet[Int]]
 
 
-Charm 
+**_Charm_** 
 
 |----skipset:mutable.TreeSet[ItemSet]
 
@@ -72,13 +72,15 @@ Charm
 
     Inputs: ItemsMapTrans<nodes of the data>, ItemsMapTrans<for closed itemsets> & Int<minimum_support>
     Outputs: Unit
-    This function will perform CHARM-EXTENDED function as described in paper(CHARM algorithm)[https://pdfs.semanticscholar.org/9f80/dbdd6e613d98dead0cc9e6c88fe04d70f330.pdf].
+    This function will perform CHARM-EXTENDED function as described in paper
+   (CHARM algorithm)[https://pdfs.semanticscholar.org/9f80/dbdd6e613d98dead0cc9e6c88fe04d70f330.pdf].
     
 |----charmProp(xi:ItemSet, xj:ItemSet, y:mutable.TreeSet[Int], minsup:Int, nodes:ItemsMapTrans, newN:ItemsMapTrans)
 
     Inputs: xi<ItemSet1>, xj<ItemSet2>, y<support of xi U xj>, minsup<Int>, nodes<the entire data stored as ItemsMapTrans>, newN<New nodes in the visualization of CHARM algorithm workflow tree>
     Outputs: ItemSet
-    This function will perform the same function as CHARM-PROPERTY as descibed in paper(CHARM algorithm)[https://pdfs.semanticscholar.org/9f80/dbdd6e613d98dead0cc9e6c88fe04d70f330.pdf].
+    This function will perform the same function as CHARM-PROPERTY as descibed in paper
+   (CHARM algorithm)[https://pdfs.semanticscholar.org/9f80/dbdd6e613d98dead0cc9e6c88fe04d70f330.pdf].
 
 
 ### How Support member facilitated ItemSet class?
