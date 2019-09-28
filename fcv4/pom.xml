@@ -22,19 +22,19 @@
       <scope>test</scope>
     </dependency>
         <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-core -->
-	<dependency>
+	<!--<dependency>
 	    <groupId>org.apache.spark</groupId>
 	    <artifactId>spark-core_2.11</artifactId>
 	    <version>2.3.2</version>
 	    <scope>provided</scope>
-	</dependency>
+	</dependency>-->
 	<!-- https://mvnrepository.com/artifact/org.apache.spark/spark-sql -->
-	<dependency>
+	<!--<dependency>
 	    <groupId>org.apache.spark</groupId>
 	    <artifactId>spark-sql_2.11</artifactId>
 	    <version>2.3.2</version>
 	    <scope>provided</scope>
-	</dependency>
+	</dependency>-->
 	<dependency>
   		<groupId>org.scodec</groupId>
   		<artifactId>scodec-core_sjs0.6_2.11</artifactId>
