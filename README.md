@@ -1,6 +1,6 @@
 # Charm_Scala
 
-This repository contains a Maven Project for CHARM algorithm, to mine the closed itemsets, implementated in Scala. Furthermore, it is an updated version of implementation done by [Courtesy: SatishUC15](https://github.com/SatishUC15/CHARM-Algorithm).
+This repository contains a Maven Project for CHARM algorithm, to mine the closed itemsets, implementated in Scala. Furthermore, it is an updated version of implementation done by [SatishUC15](https://github.com/SatishUC15/CHARM-Algorithm).
 
 The following are the updates introduced to the SatishUC15 implementation:
 
@@ -101,7 +101,7 @@ The ItemSet,  class structure is shown as below:
 
     Inputs: c<closed Itemsets of form ItemsMapTrans upto this instance>, y<Transactions set>
     Ouput: Boolean
-    This set will return true if closed itemset upto the instance this function is called has any transaction sets listed in y else
+    This function will return true if closed itemset upto the instance this function is called has any transaction sets listed in y else
     False.
     
 **_Object Charm_**
@@ -110,13 +110,34 @@ This object has only one function apply, so as to provide the charm function as 
 
 |----apply(data:ItemsMapTrans, minsup:Int):ItemsMapTrans
 
-    Inputs: ItemsMapTrans<data>, Int<minimum_support>
-    Outputs: ItemsMapTrans<closed_ItemSets>
+    Inputs: data<ItemsMapTrans>, minimum_support<Int>
+    Outputs: closed_ItemSets<ItemsMapTrans>
     This function will create a Charm class object and calls charm function on this object with the inputs passed.
     
 ### Projects:
 
-This respository contains two maven projects titled fcv3 and fcv4 which are normal and bitvector implementations of CHARM in scala. It will also contain a test sample scala code on how to import and use the charm module with classes discussed above.
+This respository contains two maven projects titled fcv3 and fcv4 which are normal and bitvector implementations of CHARM in scala. It will also contain a test sample scala code on how to import and use the charm module with the classes discussed above.
+
+Example file is already stored in the data folder as testInp_v2.txt. The first few lines are show below:
+
+    218	1,2,3,12,14,22,23,29,41,46
+    219	1,2,3,14,22,23,29,41
+    220	1,2,3,14,22,23,29,41
+    200	3,15,19
+    ..
+   
+Where each line consists of an item with name which has digit "2" at the begining and followed by the transactions list tab-separated.
+
+The results of minsup of 3 are:
+    
+    15	200 201 202 203 204 205 206 211
+    23 29	215 216 217 218 219 220
+    3 15 19	200 202 204 206
+    14 15 31	201 202 203
+    14 15 29	201 206
+    ...
+
+This output list consists of closed Itemsets (each item is space-separated) and corresponding transactions (each separated by space) map to, separated by a tab.
 
 ### How Support member facilitated ItemSet class?
 
@@ -125,10 +146,57 @@ class ItemsMapTrans where the same ordering of treemap of ItemSet is used, by de
 
 ### Bitvector Implementation of CHARM properties:
 
+In this case the case class ItemMaps trans is changed to immutable.TreeMap[ItemSet, mutable.TreeSet[BitVector]] as opposed to
+immutable.TreeMap[ItemSet, mutable.TreeSet[Int]]. And some functionalities of the Charm are also change which will be discussed below:
 
+1. Every occurence of mutable.TreeSet[Int] is changed to mutable.TreeSet[BitVector] and corresponding functionality is modified, such as
+to know the support of any itemset, the corresponding transaction size is seen earlier but in this case the population function on
+bitvector is used to return the number of 1's in it.  
 
+2. The four properties of CHARM are transformed into working with bits as follows:
 
+    Property 1:
+    t(X<sub>i<sub>) = t(X<sub>j<sub>)
+    
+    Implementation with bitvector:
+    bitvector1 == bitvector2
+    
+    Property 2:
+    t(X<sub>i<sub>) is subset of t(X<sub>j<sub>)
+    
+    Implementation with bitvector:
+    ((bitvector1 & bitvector2)== bitvector1)
+    
+    Example:
+    case 1:
+    bitvector1 = 1001
+    bitvector2 = 0011
+    (bitvector1 & bitvector2)= 0001 not equal to bitvector1
+    
+    case 2:
+    bitvector1 = 0001
+    bitvector2 = 1001
+    (bitvector1 & bitvector2)= 0001 equal to bitvector1
 
-
-
-
+    Property 3:
+    t(X<sub>j<sub>) is subset of t(X<sub>i<sub>)
+    
+    Implementation with bitvector:
+    ((bitvector1 & bitvector2)== bitvector2)
+    
+    Example:
+    case 1:
+    bitvector1 = 0001
+    bitvector2 = 0011
+    (bitvector1 & bitvector2)= 0001 not equal to bitvector2
+    
+    case 2:
+    bitvector1 = 1011
+    bitvector2 = 0011
+    (bitvector1 & bitvector2)= 0011 equal to bitvector2
+    
+    Property 3:
+    t(X<sub>j<sub>) is not equal t(X<sub>i<sub>)
+    
+    Implementation with bitvector:
+    !(bitvector1 == bitvector2)
