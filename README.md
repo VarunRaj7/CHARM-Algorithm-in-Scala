@@ -1,10 +1,10 @@
 # Charm_Scala
 
-This repository contains a two Maven Project for CHARM algorithm, to mine the closed itemsets, implementated in Scala. Furthermore, it is an updated version of implementation done by [SatishUC15](https://github.com/SatishUC15/CHARM-Algorithm).
+This repository contains a two Maven Project implementing CHARM algorithm, to mine the closed itemsets, in Scala. Furthermore, it is an updated version of implementation done by [SatishUC15](https://github.com/SatishUC15/CHARM-Algorithm).
 
-The following are the updates introduced to the SatishUC15 implementation:
+The following are the updates in implementation:
 
-1. The support is added as a ItemSet class as a member to sort the itemsets by increasing order of support. Thus, maximizing the occurences of Property 1 and Property 2 of CHARM algorithm that eventually reduced the depth of the tree.
+1. The support is added as a ItemSet class member to sort the itemsets by increasing order of support. Thus, maximizing the occurences of Property 1 and Property 2 of CHARM algorithm that eventually reduced the depth of the tree.
 
 2. A bitvector implementation is also provided so as to reduce the memory consumed. 
     
