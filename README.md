@@ -4,12 +4,53 @@ This repository contains a Maven Project for CHARM algorithm, to mine the closed
 
 The following are the updates introduced to the SatishUC15 implementation:
 
-1. The support is added as a ItemSet class member to sort the itemsets by increasing order of support. Thus, maximizing the occurences of Property 1 and Property 2 of CHARM algorithm eventually reducing the depth of the tree.
+1. The support is added as a ItemSet class as a member to sort the itemsets by increasing order of support. Thus, maximizing the occurences of Property 1 and Property 2 of CHARM algorithm that eventually reduced the depth of the tree.
 
 2. A bitvector implementation is also provided so as to reduce the memory consumed. 
     
     Also, see how bitvector implementation done: [Bitvector Implementation of CHARM properties](#bitvector-implementation-of-charm-properties)
-    
+
+### Classes
+
+The ItemSet,  class structure is shown as below:
+
+ItemSet
+|----isets: immutable.TreeSet[String]
+|----sup: Int = 0
+|----(+=):ItemSet
+        Input: String<ItemName>, sup<Support of the ItemSet>
+        Output: ItemSet
+        This is an operation to adds an ItemSet with an Item given its support and returns the new merged ItemSet.
+        Example: val Apple = new ItemSet()+=("Apple", 5)
+                 val Banana = new ItemSet()+=("Banana", 3)
+|----(++=):ItemSet
+        Input: ItemSet<ItemSet2Name>, sup<Combined Support>
+        Output: ItemSet
+        This an operation that joins two ItemSets given the combined support.
+        Example: val Apple_Banana = Apple++=(Banana, 2)
+                 Here, both apple and bananas are present in 2 transactions only 
+|----compare(that:ItemSet):Int
+        Input: ItemSet
+        Output: Int
+        This operation compares two ItemSet by Support first, if supports are similar then it compares lexically and returns an integer if this<that -1 else +1.
+        Example: Apple.compare(Banana)
+                 returns 1
+|----containsAll(that:ItemSet): Boolean
+        Input: ItemSet
+        Output: Boolean
+        This operation returns true of all the items in "that" ItemSet is present in "this"(self) ItemSet.
+        Example: Apple_Banana.compare(Apple)
+                 returns True                                                                                                          
+
+case class ItemsMapTrans
+|----imt: immutable.TreeMap[ItemSet, mutable.TreeSet[Int]]
+
+Charm 
+|----
+
+
+### How Support member facilitated ItemSet class?
+                                                                                                                                                     
 ### Bitvector Implementation of CHARM properties:
 
 
