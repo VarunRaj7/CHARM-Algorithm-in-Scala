@@ -52,13 +52,23 @@ ItemSet
         Example: Apple_Banana.compare(Apple)
                  returns True                                                                                                          
 
+
 case class ItemsMapTrans
 
 |----imt: immutable.TreeMap[ItemSet, mutable.TreeSet[Int]]
 
+
 Charm 
 
-|----
+|----skipset:mutable.TreeSet[ItemSet]
+
+|----charm(data:ItemsMapTrans, minsup:Int):ItemsMapTrans
+
+        Inputs: ItemsMapTrans<data>, Int<minimum_support>
+        Outputs: ItemsMapTrans<closed_ItemSets>
+        This function will call charmExtended function with the Items that have minimum support > minsup.
+        
+|----charmExtended()       
 
 
 ### How Support member facilitated ItemSet class?
