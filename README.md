@@ -6,7 +6,7 @@ The following are the updates in implementation:
 
 1. The support is added as a ItemSet class member to sort the itemsets by increasing order of support. Thus, maximizing the occurences of Property 1 and Property 2 of CHARM algorithm that eventually reduced the depth of the tree.
 
-2. A bitvector implementation is also provided so as to reduce the memory consumed. 
+2. A bitvector implementation is also employed so as to reduce the memory consumed. 
     
     Also, see how bitvector implementation done: [Bitvector Implementation of CHARM properties](#bitvector-implementation-of-charm-properties)
     
