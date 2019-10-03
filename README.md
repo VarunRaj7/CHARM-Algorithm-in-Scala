@@ -156,48 +156,48 @@ bitvector is used to return the number of 1's in it.
 
 2. The four properties of CHARM are transformed into working with bits as follows:
 
-        Property 1:
-        t(X<sub>i</sub>) = t(X<sub>j</sub>)
+Property 1:
+t(X<sub>i</sub>) = t(X<sub>j</sub>)
 
-        Implementation with bitvector:
-        bitvector1 == bitvector2
+Implementation with bitvector:
+bitvector1 == bitvector2
 
-        Property 2:
-        t(X<sub>i</sub>) is subset of t(X<sub>j</sub>)
+Property 2:
+t(X<sub>i</sub>) is subset of t(X<sub>j</sub>)
 
-        Implementation with bitvector:
-        ((bitvector1 & bitvector2)== bitvector1)
+Implementation with bitvector:
+((bitvector1 & bitvector2)== bitvector1)
 
-        Example:
-        case 1:
-        bitvector1 = 1001
-        bitvector2 = 0011
-        (bitvector1 & bitvector2)= 0001 not equal to bitvector1
+Example:
+case 1:
+bitvector1 = 1001
+bitvector2 = 0011
+(bitvector1 & bitvector2)= 0001 not equal to bitvector1
 
-        case 2:
-        bitvector1 = 0001
-        bitvector2 = 1001
-        (bitvector1 & bitvector2)= 0001 equal to bitvector1
+case 2:
+bitvector1 = 0001
+bitvector2 = 1001
+(bitvector1 & bitvector2)= 0001 equal to bitvector1
 
-        Property 3:
-        t(X<sub>j</sub>) is subset of t(X<sub>i</sub>)
+Property 3:
+t(X<sub>j</sub>) is subset of t(X<sub>i</sub>)
 
-        Implementation with bitvector:
-        ((bitvector1 & bitvector2)== bitvector2)
+Implementation with bitvector:
+((bitvector1 & bitvector2)== bitvector2)
 
-        Example:
-        case 1:
-        bitvector1 = 0001
-        bitvector2 = 0011
-        (bitvector1 & bitvector2)= 0001 not equal to bitvector2
+Example:
+case 1:
+bitvector1 = 0001
+bitvector2 = 0011
+(bitvector1 & bitvector2)= 0001 not equal to bitvector2
 
-        case 2:
-        bitvector1 = 1011
-        bitvector2 = 0011
-        (bitvector1 & bitvector2)= 0011 equal to bitvector2
+case 2:
+bitvector1 = 1011
+bitvector2 = 0011
+(bitvector1 & bitvector2)= 0011 equal to bitvector2
 
-        Property 4:
-        t(X<sub>j</sub>) is not equal t(X<sub>i</sub>)
+Property 4:
+t(X<sub>j</sub>) is not equal t(X<sub>i</sub>)
 
-        Implementation with bitvector:
-        !(bitvector1 == bitvector2)
+Implementation with bitvector:
+!(bitvector1 == bitvector2)
