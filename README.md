@@ -1,4 +1,4 @@
-# Charm_Scala
+# CHARM Algorithm in Scala
 
 This repository contains a two Maven Project implementing CHARM algorithm, to mine the closed itemsets, in Scala. Furthermore, it is an updated version of implementation done by [SatishUC15](https://github.com/SatishUC15/CHARM-Algorithm).
 
